@@ -83,5 +83,5 @@ Desenvolvimento de uma aplicação no backend com Nodejs, utilizando o Prisma OR
 <br />
 
 <div align="center">
-  <small>Desenvolvido por Laciene Melo - Junho/2022</small>
+  Feito com ♥ by Laciene Melo: [#lacymelo](https://github.com/lacymelo)
 </div>
