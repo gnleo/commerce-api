@@ -20,6 +20,8 @@ model Store {
   open_on_weekends Boolean
   product          Product[]
   image            Image[]
+
+  @@map("store")
 }
 
 model Product {
@@ -32,6 +34,8 @@ model Product {
   id_store    String
   store       Store   @relation(fields: [id_store], references: [id])
   image       Image[]
+
+  @@map("product")
 }
 
 model Image {
@@ -41,4 +45,6 @@ model Image {
   product    Product? @relation(fields: [id_product], references: [id])
   id_store   String?
   store      Store?   @relation(fields: [id_store], references: [id])
+
+  @@map("image")
 }

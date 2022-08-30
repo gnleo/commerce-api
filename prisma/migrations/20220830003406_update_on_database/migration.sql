@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE `Store` (
+CREATE TABLE `store` (
     `id` VARCHAR(191) NOT NULL,
     `name` VARCHAR(191) NOT NULL,
     `latitude` DECIMAL(65, 30) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE `Store` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `Product` (
+CREATE TABLE `product` (
     `id` VARCHAR(191) NOT NULL,
     `name` VARCHAR(191) NULL,
     `price` DOUBLE NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE `Product` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `Image` (
+CREATE TABLE `image` (
     `id` VARCHAR(191) NOT NULL,
     `path` VARCHAR(191) NOT NULL,
     `id_product` VARCHAR(191) NULL,
@@ -35,10 +35,10 @@ CREATE TABLE `Image` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
-ALTER TABLE `Product` ADD CONSTRAINT `Product_id_store_fkey` FOREIGN KEY (`id_store`) REFERENCES `Store`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `product` ADD CONSTRAINT `product_id_store_fkey` FOREIGN KEY (`id_store`) REFERENCES `store`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Image` ADD CONSTRAINT `Image_id_product_fkey` FOREIGN KEY (`id_product`) REFERENCES `Product`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE `image` ADD CONSTRAINT `image_id_product_fkey` FOREIGN KEY (`id_product`) REFERENCES `product`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Image` ADD CONSTRAINT `Image_id_store_fkey` FOREIGN KEY (`id_store`) REFERENCES `Store`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE `image` ADD CONSTRAINT `image_id_store_fkey` FOREIGN KEY (`id_store`) REFERENCES `store`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
